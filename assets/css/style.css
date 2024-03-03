@@ -1,0 +1,296 @@
+
+
+html,
+body {
+  position: relative;
+  height: 100%;
+}
+
+body {
+  background: #eee;
+  font-family: 'Syne', sans-serif;
+  font-size: 14px;
+  color: #000;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.header {
+  position: absolute;
+  text-align: center;
+  /* background-color: rgba(0, 0, 0, .1); Set your desired background color */
+  color: #e3f2fd; /* Set your desired text color */
+  /* top: 10px; */
+  padding: 10px;
+  z-index: 5;
+  /* top: 50%; */
+  left: 50%;
+  transform: translate(-50%);
+  /* border-radius: 5px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px); */
+}
+
+.header h1 {
+  margin: 0;
+  text-decoration: underline;
+  font-size: 24px; /* Set your desired font size */ 
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Set your desired text shadow */
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.detail__card {
+  background-color: rgba(0, 0, 0, 0.1);
+  position: absolute;
+  bottom: 80px;
+  left: 20px;
+  max-width: 80%;
+  padding: 10px 40px 10px 10px;
+  box-sizing: border-box;
+  color: #e3f2fd;
+  text-align: left;
+  border-radius: 10px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  /* transform: translateX(-100%);
+  animation: slideIn 0.5s ease-out forwards; */
+}
+
+.swiper-slide .detail__card {
+  transform: translateX(-100%);
+  animation: slideIn 1s ease-out forwards;
+  will-change: transform;
+}
+
+@keyframes slideIn {
+  to {
+    transform: translateX(0);
+  }
+}
+
+.detail__card h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+  line-height: .9;
+  margin-top: 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Set your desired text shadow */
+}
+
+
+.detail__card p {
+  margin: 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Set your desired text shadow */
+}
+
+.detail__card .credits {
+  font-size: 0.8rem; /* Adjust the font size as needed */
+  font-weight: bold; /* Make the "Photo by" text bold */
+  margin-top: 4px; /* Adjust the margin as needed */
+  color: #e3f2fd; /* Set the color of the credits text */
+}
+
+.detail__card .credits  {
+  font-weight: bold; /* Make the "Photo by" text bold */
+}
+
+.detail__card .credits .credit-author {
+  font-weight: normal;
+}
+
+
+.autoplay-progress {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  z-index: 10;
+  width: 48px;
+  height: 48px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: var(--swiper-theme-color);
+}
+
+.autoplay-progress svg {
+  --progress: 0;
+  position: absolute;
+  left: 0;
+  top: 0px;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  stroke-width: 4px;
+  stroke: var(--swiper-theme-color);
+  fill: none;
+  stroke-dashoffset: calc(125.6 * (1 - var(--progress)));
+  stroke-dasharray: 125.6;
+  transform: rotate(-90deg);
+}
+
+.footer {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: transparent; /* Set your desired background color */
+  color: #e3f2fd; /* Set your desired text color */
+  padding: 0px;
+  text-align: center;
+  width: 100%;
+  z-index: 5;
+}
+
+.footer p:first-child {
+  margin-top: 0;
+  margin-bottom: 0; /* Adjust spacing between the lines */
+  font-weight: bold; /* Set your desired font weight */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.footer p:last-child {
+  margin: 0; /* Remove margin for the last paragraph (All rights reserved) */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Thumbnail */
+
+.thumbnail {
+  background-color: red;
+  position: absolute;
+  width: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 50;
+  top: 0;
+}
+
+.thumbnail-wrapper {
+  top: ;
+  display: flex; /* Use flexbox to align items horizontally */
+  overflow-x: auto; /* Enable horizontal scrolling */
+}
+
+.thumbnail-slide {
+  background-position: center;
+  background-size: cover;
+  cursor: pointer;
+}
+
+.thumbnail-slide img {
+  display: block;
+  width: 100%;
+}
+
+/* Swiper Css Button */
+.nav-btn {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  transform: translateY(30px);
+  background-color: rgba(0, 0, 0, .1);
+  transition: .2s;
+}
+
+.nav-btn:hover {
+  background-color: rgba(0, 0, 0, .2);
+}
+
+.nav-btn::after, 
+.nav-btn::before {
+  font-size: 20px;
+  color: #fff;
+}
+
+.swiper-pagination-bullet {
+  background-color: white;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: whitesmoke;
+}
+
+@media screen and (max-width: 768px) {
+  .slide p {
+    padding: 0 20px;
+  }
+
+  .nav-btn {
+    display: none;
+  }
+
+  .detail__card {
+    max-width: 100%;
+    right: 150px;
+    left: 150px;
+  }
+
+  .detail__card h2 {
+    font-size: 1.45rem;
+  }
+
+  .detail__card p {
+    font-size: .9rem;
+  }
+
+  .swiper-pagination-bullet {
+    display: none;
+  }
+
+  .swiper-pagination-bullet-active {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 280px) {
+  .detail__card h2 {
+    font-size: 1.5rem;
+  }
+
+  .detail__card p {
+    font-size: .9rem;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .detail__card {
+    max-width: 100%;
+    left: 25px;
+    right: 25px;
+  }
+  
+  .detail__card h2 {
+    font-size: 1.45rem;
+  }
+
+  .detail__card p {
+    font-size: .9rem;
+  }
+}
